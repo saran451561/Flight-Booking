@@ -1,0 +1,45 @@
+destinations = {
+    'New york': 300,
+    'Los angeles': 250,
+    'Chicago': 200,
+    'Houston': 180,
+    'Miami': 220
+}
+def displaydestination():
+    print("Available Destinations:")
+    for city, price in destinations.items():
+        print(f"{city}: ${price}")
+def bookticket():
+    displaydestination()
+    destination=input("Enter Destination:").strip()
+    a=destination.capitalize()
+    if a in destinations:
+        name=input("Enter Name:").strip()
+        n=name.capitalize()
+        age=input("Enter Age:")
+        if int(age)>=1:
+            print("\nBooking Sammary:")
+            print(f"Name:{n}")
+            print(f"Destination:{a}")
+            a=destination.capitalize()
+            if a=="New york":
+                print("Price:300$")
+            elif a=="Los angeles":
+                print("Price:250$")
+            elif a=="Chicago":
+                print("Price:200$")
+            elif a=="Houston":
+                print("Price:180$")
+            elif a=="Miami":
+                print("Price:220$")
+            else:
+                return
+            
+            
+        confirm=input("Do You Want to confirm the booking? (yes/no):")
+        if confirm == "yes":
+            print("Your Booking Has Been Confirmed!")
+    else:
+        print("Sorry! Destination Not Available---")
+
+bookticket()
